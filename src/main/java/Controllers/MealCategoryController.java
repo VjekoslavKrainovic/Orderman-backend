@@ -31,6 +31,7 @@ public class MealCategoryController {
     public void putMealCategory(@RequestBody MealCategory mealCategory){
 
         mealCategoryService.saveMealCategory(mealCategory);
+
     }
 
     @PostMapping("/mealCategory")

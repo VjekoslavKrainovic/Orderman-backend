@@ -24,10 +24,15 @@ public class MealCategoryService {
 
         for (int i = 0; i < mealCategory.getMeals().size(); i++) {
             mealCategory.getMeals().get(i).setMealCategory(mealCategory);
+
+        }
+        mealCategoryRepository.save(mealCategory);
+
+        for (int i = 0; i < mealCategory.getMeals().size(); i++) {
+            mealRepository.save( mealCategory.getMeals().get(i));
         }
 
 
-        mealCategoryRepository.save(mealCategory);
     }
 
     public void updateMealCategory(MealCategory mealCategory){
