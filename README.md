@@ -2,4 +2,4 @@
 
 ## Description
 
-Koristi se H2 database radi lakseg testiranja osobe koja skine!
+Koristi SQL server kao database te je potrebno samo pokrenuti i na front-endu ubacivati/citati podatke
