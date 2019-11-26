@@ -19,7 +19,7 @@ public class MealCategory {
     private Integer id;
     private String name;
 
-    @OneToMany(mappedBy = "mealCategory", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "mealCategory", fetch = FetchType.EAGER)
     private List<Meal> meals;
 
 

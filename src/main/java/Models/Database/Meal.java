@@ -22,7 +22,7 @@ public class Meal {
     @JoinColumn(name = "meal_category_id")
     private MealCategory mealCategory;
 
-    @OneToOne( orphanRemoval = true)
+    @OneToOne()
     @PrimaryKeyJoinColumn
     @JsonIgnore
     public Item item;

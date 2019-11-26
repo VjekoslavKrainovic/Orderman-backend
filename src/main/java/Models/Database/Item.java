@@ -17,7 +17,7 @@ public class Item {
     private Integer id;
 
 
-    @OneToOne(cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @OneToOne()
     @JoinColumn(name="meal_id")
     private Meal meal;
     private String description;

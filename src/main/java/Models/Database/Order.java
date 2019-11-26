@@ -28,7 +28,7 @@ public class Order {
     private LocalDateTime date;
     private Integer tableNumber;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Item> items;
 
 

@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Transactional
+
 public interface MealRepository extends JpaRepository<Meal,Integer> {
 
     Meal findByName(String name);
