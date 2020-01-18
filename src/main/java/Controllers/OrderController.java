@@ -8,6 +8,7 @@ import Repositorys.MealCategoryRepository;
 import Repositorys.OrderRepository;
 import Services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,10 +28,9 @@ public class OrderController {
 
 
     @GetMapping("/tables")
-    @ResponseBody
     public List<Order> getAllTables (){
 
-//    List<Order> orders = orderRepository.findAll();
+
         List<Order> orders = orderRepository.findAllByIsDoneIsFalseOrIsStartedIsFalseOrIsTakenIsFalse();
 
 
@@ -38,15 +38,20 @@ public class OrderController {
     }
 
     @PostMapping("/tables")
-    public void saveOrder (@RequestBody Order order){
+    public ResponseEntity<Object> saveOrder (@RequestBody Order order){
+
         orderService.saveOrder(order);
 
+        return ResponseEntity.ok(order);
     }
 
 
     @PutMapping("/tables")
-    public void changeOrder (@RequestBody Order order){
-       orderService.changeOrder(order);
+    public ResponseEntity<Object> changeOrder (@RequestBody Order order){
+
+        orderService.changeOrder(order);
+
+        return ResponseEntity.ok(order);
     }
 
 

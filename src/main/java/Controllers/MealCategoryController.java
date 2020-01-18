@@ -5,6 +5,7 @@ import Models.Database.MealCategory;
 import Repositorys.MealCategoryRepository;
 import Services.MealCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,16 +29,18 @@ public class MealCategoryController {
     }
 
     @PutMapping("/mealCategory")
-    public void putMealCategory(@RequestBody MealCategory mealCategory){
+    public ResponseEntity<Object> putMealCategory(@RequestBody MealCategory mealCategory){
 
         mealCategoryService.saveMealCategory(mealCategory);
 
+        return ResponseEntity.ok(mealCategory);
     }
 
     @PostMapping("/mealCategory")
-    public void postMealCategory(@RequestBody MealCategory mealCategory){
+    public ResponseEntity<Object> postMealCategory(@RequestBody MealCategory mealCategory){
 
-        System.out.println(mealCategory);
         mealCategoryService.updateMealCategory(mealCategory);
+
+        return ResponseEntity.ok(mealCategory);
     }
 }
